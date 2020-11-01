@@ -4,7 +4,7 @@
 <?php get_header() ?>
 <?php    
     /*
-        Template Name: Home Page Template 1
+        Template Name: Template 1
     */
 ?>
 	<!-- Content -->

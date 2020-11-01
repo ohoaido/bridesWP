@@ -52,28 +52,6 @@
                         );
                         wp_nav_menu($defaults); 
                     ?>
-                    <!-- <ul>
-                        <li>
-                            <a href="#" title="">
-                                DESIGNERS AND CAMPAIGN PHOTOS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="">
-                                BRIDAL GOWNS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="">
-                                BRIDESMAIDS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="">
-                                ACCESSORIES
-                            </a>
-                        </li>
-                    </ul> -->
                 </div>
             </div>
         </div>
