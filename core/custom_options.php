@@ -275,6 +275,16 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                         //'desc'        => __(' Có hiển thị menu hay không ?', 'bridek'),
                         'on'        => __('Enable', 'bridek'),
                         'off'       => __('Disable', 'bridek'),
+                    ),
+                    array(
+                        'id'        => 'logo_header_02',
+                        'type'      => 'media',
+                        'url'       => true,
+                        'title'     => __('Update', 'bridek'),
+                        'desc'      => __('Image', 'bridek'),
+                        'default'  => array(
+                            'url'=>''
+                        ),       
                     )
                 ),
             );
@@ -480,6 +490,17 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                         'type'      => 'text',
                         'title'     => __('Social', 'bridek'),   
                         'default'   => '',              
+                    ),
+                    array(
+                        'id'        => 'logo_tab',
+                        'type'      => 'media',
+                        'url'      => true,
+                        'title'     => __('Logo upload', 'bridek'),
+                        'desc'      => __('Logo ', 'bridek'),
+                        //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
+                        'default'  => array(
+                            'url'=>''
+                        ),       
                     )
                 )
             );

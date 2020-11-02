@@ -75,26 +75,34 @@
                             <!-- <h3>Social</h3> -->
                             <h3><?php echo $fr_options['footer_field_16'] ?> </h3>
                             <ul class="social">
+                                <?php if($fr_options['footer_field_05']) :?>
                                 <li>
                                     <a href="<?= $fr_options['footer_field_05']?>" title="">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
+                                <?php endif;?>
+                                <?php if($fr_options['footer_field_06']) :?>
                                 <li>
                                     <a href="<?= $fr_options['footer_field_06']?>" title="">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
+                                <?php endif;?>
+                                <?php if($fr_options['footer_field_07']) :?>
                                 <li>
                                     <a href="<?= $fr_options['footer_field_07']?>" title="">
                                         <i class="fa fa-youtube-play"></i>
                                     </a>
                                 </li>
+                                <?php endif;?>
+                                <?php if($fr_options['footer_field_08']) :?>
                                 <li>
                                     <a href="<?= $fr_options['footer_field_08']?>" title="">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
+                                <?php endif;?>
                             </ul>
                             <?php endif; ?>
                         </div>
@@ -127,6 +135,77 @@
 
     <div class="go-to-top"></div>
 
+    <div id="menu-active">
+        <div class="close__menu">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="languages">
+            <ul>
+                <li class="">
+                    <span class="current">Eng</span>
+                </li>
+                <li>
+                    <a href="#" title="">Vie</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="logo">
+            <a href="<?= home_url()?>" class="logo">
+                <img src="<?= $fr_options['logo_tab']['url'] ?>" alt="Logo">
+            </a>
+        </div>
+
+        <div class="menu">
+            <?php 
+                $menus_tab = array(
+                  'theme_location'  => 'menus_tab',
+                  'container'       => 'ul',
+                  'menu_class'      => 'no-style main__menu',
+                );
+                wp_nav_menu($menus_tab); 
+            ?>
+        </div>
+
+        <div class="bottom">
+            <div class="togger__form md-trigger" data-modal="#app">
+                REQUEST AN APPOINTMENT
+            </div>              
+
+            <ul class="social">
+                <?php if($fr_options['footer_field_05']) :?>
+                <li>
+                    <a href="<?= $fr_options['footer_field_05']?>" title="">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <?php endif;?>
+                <?php if($fr_options['footer_field_06']) :?>
+                <li>
+                    <a href="<?= $fr_options['footer_field_06']?>" title="">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <?php endif;?>
+                <?php if($fr_options['footer_field_07']) :?>
+                <li>
+                    <a href="<?= $fr_options['footer_field_07']?>" title="">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                </li>
+                <?php endif;?>
+                <?php if($fr_options['footer_field_08']) :?>
+                <li>
+                    <a href="<?= $fr_options['footer_field_08']?>" title="">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <?php endif;?>
+            </ul>
+        </div>
+    </div>
     <!-- header -->
     <div id="header-responsive">
         <div class="bottoms">
@@ -140,61 +219,9 @@
                     <span></span>
                 </div>
             </div>
-
-                <a href="<?= home_url()?>" class="logo">
-                    <img src="<?= $fr_options['logo-footer_04']['url'] ?>" alt="Logo">
-                </a>
-
-            <div class="menu-mobile">
-                <div class="language-mobile">                   
-                    <span data-toggle="dropdown">ENG</span>
-
-                    <ul class="no-style">
-                        <li class="current">
-                            <span>
-                                ENG
-                            </span>
-                        </li>
-                        <li>
-                            <a href="" class="dropdown-item">
-                                VNI
-                            </a>
-                        </li>
-                    </ul>       
-                </div>
-
-                <div class="clearfix"></div>
-                <?php 
-                    $defaults = array(
-                      'theme_location'  => 'main_left',
-                      'container'       => 'ul',
-                      'menu_class'      => 'no-style fr-menu',
-                    );
-                    wp_nav_menu($defaults); 
-                ?>
-                <!-- <ul class="no-style fr-menu">
-                    <li>
-                        <a href="#" title="">
-                            DESIGNERS AND CAMPAIGN PHOTOS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            BRIDAL GOWNS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            BRIDESMAIDS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            ACCESSORIES
-                        </a>
-                    </li>
-                </ul -->>
-            </div>
+            <a href="<?= home_url()?>" class="logo">
+                <img src="<?= $fr_options['logo_tab']['url'] ?>" alt="Logo">
+            </a>
         </div>
     </div><!-- /header -->
     

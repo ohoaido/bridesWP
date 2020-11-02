@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animate.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.js"></script>
@@ -23,19 +24,20 @@
     <script src="<?php bloginfo('template_url'); ?>/js/wow.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.mCustomScrollbar.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header id="header" class="">
-        <div class="hambuger">
-            <div class="hambuger__line">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="box__scroll">           
+            <div class="hambuger">
+                <div class="hambuger__line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="header_box">
+            <div class="container">             
                 <div class="logo">
                     <?php if( $fr_options['logo_header-on-off']) : ?> 
                         <a href="<?= home_url()?>">
@@ -43,10 +45,22 @@
                         </a>
                     <?php endif; ?>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header_box">
+                <div class="logo">
+                    <!-- <a href="#" title="">
+                        <img src="images/logo.svg" alt="Logo">
+                    </a> -->
+                    <a href="<?= home_url()?>">
+                        <img src="<?= $fr_options['logo_header_02']['url'] ?>" alt="Logo">
+                    </a>
+                </div>
                 <div class="menu">
                     <?php 
                         $defaults = array(
-                          'theme_location'  => 'main',
+                          'theme_location'  => 'menus',
                           'container'       => 'ul',
                           'menu_class'      => 'no-style box__left',
                         );

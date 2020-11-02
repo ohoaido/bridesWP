@@ -33,6 +33,7 @@
 	add_theme_support('menus');
 	register_nav_menus(array(
 		'main' => 'Main Menu',
-		'link' => 'Useful link Menu',
+		'menus_tab' => 'menus tab',
 	));
+
 ?>
