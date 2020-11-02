@@ -226,8 +226,8 @@
 										
 									</div>
 									<div class="item__caption">
-										<h3 class="item__name">Cassids</h3>
-										<div class="item__auth">by <span>Anne Barge</span></div>
+										<h3 class="item__name"><?= rwmb_meta('text_18') ?></h3>
+										<div class="item__auth">by <span><?= rwmb_meta('text_19') ?></span></div>
 									</div>
 								</a>
 							</div>    

@@ -17,7 +17,7 @@
 			$Category = $image['category_designers'];
 			$Name = $image['name_designers'];
 			$Text = $image['text_designers'];
-			$Prevew = $image['prevew_designers'];
+			$preview = $image['preview_designers'];
 			$Link = $image['url_designers'];
 			?>						
 			<section class="content-designers">
@@ -33,7 +33,7 @@
 					</div>
 					<a class="caption__more">
 						<span></span>
-						<?=  $Prevew ?> 
+						<?=  $preview ?> 
 					</a>					
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 								</div>
 								<a class="child__more">
 									<span></span>
-									<?= rwmb_meta('prevew_single_gallery') ?> 
+									<?= rwmb_meta('preview_single_gallery') ?> 
 								</a>
 
 								<div class="child__book md-trigger" data-modal="#book">
@@ -78,39 +78,43 @@
 
 		<!-- Content Grid 2 Slider -->
 		<section class="content-grid2-slider">
-			<?php 
-			$images = rwmb_meta('group_wp2txdulpxi');
-			foreach ($images as $image): 
-				$bg = wp_get_attachment_image_url( $image['content_designers'], 'full' );
-				$Category = $image['category_designers'];
-				$Name = $image['name_designers'];
-				$Text = $image['text_designers'];
-				$Prevew = $image['prevew_designers'];
-				$Link = $image['url_designers'];
-				?>						
-			<?php endforeach; ?>
-			<div class="content__left">
-				<div class="left__slider owl-carousel">					
-					<div class="item" style="background-image: url(<?= $bg ?>;">
-						<img src="<?=  rwmb_meta('images_grid2')['full_url'] ?>" alt="Image">
+			
+			<div class="content__left">	
+
+					<div class="left__slider owl-carousel">			
+						<?php 
+						$GridSliders = rwmb_meta('group_z51mty6u3w');
+						foreach ($GridSliders as $GridSlider): 
+							$bgGS = wp_get_attachment_image_url( $GridSlider['bg_Gridslider'], 'full' );
+							?>				
+							<div class="item" style="background-image: url(<?= $bgGS ?>;">
+								<img src="<?= $bgGS ?>" alt="Image">
+							</div>
+						<?php endforeach; ?>
 					</div>
-					<div class="item" style="background-image: url(images/single-1.png);">
-						<img src="images/single-1.png" alt="Image">
-					</div>
-				</div>
+
 			</div>
 			<div class="content__right">
 				<div class="right__slider owl-carousel">
+					<?php 
+					foreach ($GridSliders as $GridSlider): 
+					$logobrownGS = wp_get_attachment_image_url( $GridSlider['logobrown_Gridslider'], 'full' );
+					$CategoryGS  = $GridSlider['category_Gridslider'];
+					$NameGS  = $GridSlider['name_Gridslider'];
+					$TextGS  = $GridSlider['text_Gridslider'];
+					$previewGS  = $GridSlider['preview_Gridslider'];
+					$LinkGS  = $GridSlider['url_Gridslider'];
+					?>			
 					<div class="item">	
 						<div class="item__box">	
 							<div class="item__circle">
-								<img src="images/bg__logo__brown.png" alt="Circle">
+								<img src="<?php echo $logobrownGS; ?>" alt="Circle">
 							</div>
 							<div class="clearfix"></div>
-							<div class="item__category">BRIDESMAIDS DESIGNERS</div>
+							<div class="item__category"><?= $CategoryGS ?></div>
 
 							<div class="item__name">
-								<h3>Twigs and Honey</h3>
+								<h3><?= $NameGS ?></h3>
 								<div class="item__arrow">
 									<div class="arrow__prev"></div>
 									<div class="arrow__next"></div>
@@ -118,11 +122,11 @@
 							</div>
 
 							<div class="item__text">
-								Được thành lập từ năm 1999, Anne Barge là thương hiệu thời trang cưới lâu đời và nổi tiếng tại Mỹ. Các thiết kế của Anne Barge dung hòa giữa phom dáng cổ điển với những đường cắt, chi tiết đính kết hiện đại...
+								<?= $TextGS ?>
 							</div>
 							<a class="item__more">
 								<span></span>
-								xem bộ sưu tập
+								<?= $previewGS ?>
 							</a>
 
 							<div class="item__book md-trigger" data-modal="#book">
@@ -130,35 +134,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="item">	
-						<div class="item__box">	
-							<div class="item__circle">
-								<img src="images/bg__logo__brown.png" alt="Circle">
-							</div>
-							<div class="clearfix"></div>
-							<div class="item__category">BRIDESMAIDS DESIGNERS</div>
-
-							<div class="item__name">
-								<h3>LELET NY</h3>
-								<div class="item__arrow">
-									<div class="arrow__prev"></div>
-									<div class="arrow__next"></div>
-								</div>							
-							</div>
-
-							<div class="item__text">
-								Được thành lập từ năm 1999, Anne Barge là thương hiệu thời trang cưới lâu đời và nổi tiếng tại Mỹ. Các thiết kế của Anne Barge dung hòa giữa phom dáng cổ điển với những đường cắt, chi tiết đính kết hiện đại...ững đường cắt, chi tiết đính kết hiện đại...ững đường cắt, chi tiết đính kết hiện đại...
-							</div>
-							<a class="item__more">
-								<span></span>
-								xem bộ sưu tập
-							</a>
-
-							<div class="item__book md-trigger" data-modal="#book">
-								REQUEST AN APPOINTMENT
-							</div>
-						</div>
-					</div>
+					
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</section> <!-- Content Grid 2 Slider -->
@@ -167,9 +144,9 @@
 		<section class="content-albums">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small">BRIDAL GOWNS</div>
+					<div class="box__small"><?= rwmb_meta('text_15') ?></div>
 					<div class="box__rela">						
-						<h2 class="box__heading">New Arrival Dress</h2>
+						<h2 class="box__heading"><?= rwmb_meta('text_16') ?></h2>
 						<div class="box__control">
 							<div class="control__arrow">
 								<div class="arrow__prev"></div>
@@ -178,107 +155,36 @@
 							</div>
 							<a class="control__more">
 								<span></span>
-								xem thêm
+								<?= rwmb_meta('text_17') ?>
 							</a>
 						</div>
 					</div>
 					<div class="box__sliders owl-carousel">
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-1.png" alt="Image">
-									<img src="images/img-2.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Cassids</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-2.png" alt="Image">
-									<img src="images/img-3.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Britney</h3>
-									<div class="item__auth">by <span>Rosaline</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-3.png" alt="Image">
-									<img src="images/img-4.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Christine</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-4.png" alt="Image">
-									<img src="images/img-1.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Cassids</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-1.png" alt="Image">
-									<img src="images/img-2.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Cassids</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-2.png" alt="Image">
-									<img src="images/img-3.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Britney</h3>
-									<div class="item__auth">by <span>Rosaline</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-3.png" alt="Image">
-									<img src="images/img-4.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Christine</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#" title="">
-								<div class="item__img">
-									<img src="images/img-4.png" alt="Image">
-									<img src="images/img-1.png" alt="Image">
-								</div>
-								<div class="item__caption">
-									<h3 class="item__name">Cassids</h3>
-									<div class="item__auth">by <span>Anne Barge</span></div>
-								</div>
-							</a>
-						</div>
+						<?php
+							wp_reset_query();
+                            $args1=array(
+                                'post_type' => 'bridalgowns',
+                                'post_status' => 'publish',     
+                                'posts_per_page' => 10,
+			                    'order' => 'DESC'
+                            );
+                            query_posts($args1);    
+                        ?>                   
+                        <?php while (have_posts()) : the_post();  ?>
+							<div class="item">
+								<a href="#" title="">
+									<div class="item__img">
+										<img src="<?=  rwmb_meta('background_8')['full_url'] ?>" alt="Image">
+										<img src="<?=  rwmb_meta('background_9')['full_url'] ?>" alt="Image">
+										
+									</div>
+									<div class="item__caption">
+										<h3 class="item__name"><?= rwmb_meta('text_18') ?></h3>
+										<div class="item__auth">by <span><?= rwmb_meta('text_19') ?></span></div>
+									</div>
+								</a>
+							</div>    
+                        <?php endwhile; ?>
 					</div>
 
 					<div class="box__book md-trigger" data-modal="#book">
