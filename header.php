@@ -39,20 +39,15 @@
             </div>
             <div class="container">             
                 <div class="logo">
-                    <?php if( $fr_options['logo_header-on-off']) : ?> 
-                        <a href="<?= home_url()?>">
-                            <img src="<?= $fr_options['logo_header_01']['url'] ?>" alt="Logo">
-                        </a>
-                    <?php endif; ?>
+                    <a href="<?= home_url()?>">
+                        <img src="<?= $fr_options['logo_header_01']['url'] ?>" alt="Logo">
+                    </a>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="header_box">
                 <div class="logo">
-                    <!-- <a href="#" title="">
-                        <img src="images/logo.svg" alt="Logo">
-                    </a> -->
                     <a href="<?= home_url()?>">
                         <img src="<?= $fr_options['logo_header_02']['url'] ?>" alt="Logo">
                     </a>
@@ -60,7 +55,7 @@
                 <div class="menu">
                     <?php 
                         $defaults = array(
-                          'theme_location'  => 'menus',
+                          'theme_location'  => 'main',
                           'container'       => 'ul',
                           'menu_class'      => 'no-style box__left',
                         );

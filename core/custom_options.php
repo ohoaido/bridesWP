@@ -241,47 +241,30 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                 'desc'      => __('Edit header!', 'bridek'),
                 'icon'      => 'el-icon-edit',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
-                'fields'    => array(           
-					array(
-						'id'		=> 'logo_header_01',
-						'type'		=> 'media',
-						'url'		=> true,
-						'title'		=> __('Update', 'bridek'),
-						'desc'		=> __('Image', 'bridek'),
-						'default'  => array(
-                            'url'=>''
-                        ),       
-					),
-                    /*array(
-                        'id'        => 'test_field_02',
-                        'type'      => 'text',
-                        'title'     => __('Ghi chú', 'bridek'),   
-                        'default'   => '',              
-                    ),*/
-					array(
-                        'id'        => 'logo_header-on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable logo', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'menu_header-on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable Menu', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' Có hiển thị menu hay không ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
+                'fields'    => array(  
                     array(
                         'id'        => 'logo_header_02',
                         'type'      => 'media',
                         'url'       => true,
-                        'title'     => __('Update', 'bridek'),
-                        'desc'      => __('Image', 'bridek'),
+                        'title'     => __('Logo', 'bridek'),
+                        'default'  => array(
+                            'url'=>''
+                        ),       
+                    ),     
+                    array(
+                        'id'        => 'logo_header_01',
+                        'type'      => 'media',
+                        'url'       => true,
+                        'title'     => __('Logo when scroll', 'bridek'),
+                        'default'  => array(
+                            'url'=>''
+                        ),       
+                    ),
+                    array(
+                        'id'        => 'logo_tab',
+                        'type'      => 'media',
+                        'url'      => true,
+                        'title'     => __('Logo In Menu Tab', 'bridek'),
                         'default'  => array(
                             'url'=>''
                         ),       
@@ -290,124 +273,13 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
             );
 
             $this->sections[] = array(
-                'title'     => __('Footer Settings', 'bridek'),
+                'title'     => __('Social Settings', 'bridek'),
                 // Biến thành con của thằng ở trên
                 // 'subsection'       => true,
-                'desc'      => __('This is Footer Settings Customize!', 'bridek'),
+                'desc'      => __('This is Social Settings Customize!', 'bridek'),
                 'icon'      => 'el el-globe',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
-                'fields'    => array(      
-                    array(
-                        'id'        => 'logo-footer_01',
-                        'type'      => 'media',
-                        'url'      => true,
-                        'title'     => __('Logo upload', 'bridek'),
-                        'desc'      => __('Website Logo', 'bridek'),
-                        //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
-                        'default'  => array(
-                            'url'=>''
-                        ),       
-                    ),   
-                    array(
-                        'id'        => 'logo-footer_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable logo', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'navigate-footer_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable navigate', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'needhelp-footer_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable NEED HELP?', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'social-footer_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable SOCIAL?', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'logo-footer_02',
-                        'type'      => 'media',
-                        'url'      => true,
-                        'title'     => __('Logo upload', 'bridek'),
-                        'desc'      => __('Website Logo', 'bridek'),
-                        //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
-                        'default'  => array(
-                            'url'=>''
-                        ),       
-                    ),   
-                    array(
-                        'id'        => 'logo-footer_02_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable logo footer 2?', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'footer_field_01',
-                        'type'      => 'text',
-                        'title'     => __('All rights reserved — 2020 © Brides by LemonLOVE', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                    array(
-                        'id'        => 'logo-footer_03',
-                        'type'      => 'media',
-                        'url'      => true,
-                        'title'     => __('Logo upload', 'bridek'),
-                        'desc'      => __('Logo LemonLOVE Website', 'bridek'),
-                        //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
-                        'default'  => array(
-                            'url'=>''
-                        ),       
-                    ),   
-                    array(
-                        'id'        => 'logo-footer_03_on-off',
-                        'type'      => 'switch',
-                        'title'     => __('Enable Logo LemonLOVE Website?', 'bridek'),   
-                        'compiler'   => 'bool',  
-                        //'desc'        => __(' logo ?', 'bridek'),
-                        'on'        => __('Enable', 'bridek'),
-                        'off'       => __('Disable', 'bridek'),
-                    ),
-                    array(
-                        'id'        => 'footer_field_02',
-                        'type'      => 'text',
-                        'title'     => __('LemonLOVE Website', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                    array(
-                        'id'        => 'footer_field_03',
-                        'type'      => 'text',
-                        'title'     => __('link', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                    array(
-                        'id'        => 'footer_field_04',
-                        'type'      => 'text',
-                        'title'     => __('website by 3conn', 'bridek'),   
-                        'default'   => '',              
-                    ),
+                'fields'    => array(  
                     array(
                         'id'        => 'footer_field_05',
                         'type'      => 'text',
@@ -432,57 +304,38 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                         'title'     => __('Twitter', 'bridek'),   
                         'default'   => '',              
                     ),
+                )
+            );
+
+            $this->sections[] = array(
+                'title'     => __('Footer Settings', 'bridek'),
+                // Biến thành con của thằng ở trên
+                // 'subsection'       => true,
+                'desc'      => __('This is Footer Settings Customize!', 'bridek'),
+                'icon'      => 'el el-globe',
+                // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+                'fields'    => array(      
                     array(
-                        'id'        => 'logo-footer_04',
+                        'id'        => 'logo-footer_01',
                         'type'      => 'media',
                         'url'      => true,
-                        'title'     => __('Logo upload', 'bridek'),
-                        'desc'      => __('Logo ', 'bridek'),
+                        'title'     => __('Logo Footer', 'bridek'),
+                        'desc'      => __('Website Logo', 'bridek'),
                         //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
                         'default'  => array(
                             'url'=>''
                         ),       
-                    ),
+                    ),  
                     array(
-                        'id'        => 'footer_field_09',
+                        'id'        => 'footer_title_1',
                         'type'      => 'text',
-                        'title'     => __('NEED HELP?', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                    array(
-                        'id'        => 'footer_field_10',
-                        'type'      => 'text',
-                        'title'     => __('Link Questions & Answer', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                     array(
-                        'id'        => 'footer_field_11',
-                        'type'      => 'text',
-                        'title'     => __('Questions & Answer', 'bridek'),   
+                        'title'     => __('Navigate', 'bridek'),   
                         'default'   => '',              
                     ),
                     array(
-                        'id'        => 'footer_field_12',
+                        'id'        => 'footer_title_2',
                         'type'      => 'text',
-                        'title'     => __('Link Customer Service', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                     array(
-                        'id'        => 'footer_field_13',
-                        'type'      => 'text',
-                        'title'     => __('Customer Service?', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                    array(
-                        'id'        => 'footer_field_14',
-                        'type'      => 'text',
-                        'title'     => __('Link Store Locator', 'bridek'),   
-                        'default'   => '',              
-                    ),
-                     array(
-                        'id'        => 'footer_field_15',
-                        'type'      => 'text',
-                        'title'     => __('Store Locator', 'bridek'),   
+                        'title'     => __('Need help?', 'bridek'),   
                         'default'   => '',              
                     ),
                     array(
@@ -492,16 +345,50 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                         'default'   => '',              
                     ),
                     array(
-                        'id'        => 'logo_tab',
+                        'id'        => 'logo-footer_02',
                         'type'      => 'media',
                         'url'      => true,
-                        'title'     => __('Logo upload', 'bridek'),
-                        'desc'      => __('Logo ', 'bridek'),
+                        'title'     => __('Logo Circle Footer', 'bridek'),
+                        'desc'      => __('Website Logo', 'bridek'),
                         //'subtitle'  => __('Use big logo for retina ready display', 'bridek'),
                         'default'  => array(
                             'url'=>''
                         ),       
-                    )
+                    ),  
+                    array(
+                        'id'        => 'footer_field_01',
+                        'type'      => 'text',
+                        'title'     => __('Copyright', 'bridek'),   
+                        'default'   => '',              
+                    ),
+                    array(
+                        'id'        => 'logo-footer_03',
+                        'type'      => 'media',
+                        'url'      => true,
+                        'title'     => __('Lemon', 'bridek'),
+                        'desc'      => __('Logo LemonLOVE Website', 'bridek'),
+                        'default'  => array(
+                            'url'=>''
+                        ),       
+                    ),   
+                    array(
+                        'id'        => 'footer_field_02',
+                        'type'      => 'text',
+                        'title'     => __('LemonLOVE Website', 'bridek'),   
+                        'default'   => '',              
+                    ),
+                    array(
+                        'id'        => 'footer_field_03',
+                        'type'      => 'text',
+                        'title'     => __('Link for LemonLOVE Website', 'bridek'),   
+                        'default'   => '',              
+                    ),
+                    array(
+                        'id'        => 'footer_field_04',
+                        'type'      => 'text',
+                        'title'     => __('website by 3conn', 'bridek'),   
+                        'default'   => '',              
+                    ),
                 )
             );
 
@@ -589,15 +476,15 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
             $this->args = array(
                 'opt_name' => 'fr_options',
                 'global_variable' => 'fr_options',
-                'display_name' => 'Hung',
+                'display_name' => '3conn',
                 'display_version' => false,
-                'page_slug' => 'bridek_options',
-                'page_title' => 'Hung Options Panel',
+                'page_slug' => 'fr_options',
+                'page_title' => 'Options Panel',
                 'update_notice' => true,
                 'intro_text' => '',
                 'footer_text' => '<p>Don\'t forget to save</p>',
                 'menu_type' => 'menu',
-                'menu_title' => 'Hung',               
+                'menu_title' => '3conn',               
                 'menu_icon' => 'https://res.cloudinary.com/nguyen-anh/image/upload/v1576404110/logo-white_egid0y.png',
                 'allow_sub_menu' => true,               
                 'page_priority' => '62',

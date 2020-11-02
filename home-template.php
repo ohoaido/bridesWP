@@ -107,10 +107,6 @@
 		<?php wp_reset_query();?>
 		<!-- Content About -->
 		<section class="content-about">
-
-			<?php
-				$images_about = rwmb_meta('group_mjejvl6xzyj');
-			?>
 			<div class="container">
 				<div class="content_box">
 					<div class="box__small"><?= rwmb_meta('text_8') ?></div>
@@ -121,53 +117,39 @@
 				</div>	
 			</div>
 
-			<?php 
-				foreach ($images_about as $image_about): 
-					$bg3 = wp_get_attachment_image_url( $image_about['background_3'], 'full' );
-					$bg4 = wp_get_attachment_image_url( $image_about['background_4'], 'full' );
-					$bg5 = wp_get_attachment_image_url( $image_about['background_5'], 'full' );
-					$bg6 = wp_get_attachment_image_url( $image_about['background_6'], 'full' );
-					$text_11 = $image_about['text_11'];
-					$text_12 = $image_about['text_12'];
-					$text_13 = $image_about['text_13'];
-					$text_14 = $image_about['text_14'];
-
-					?>					
-				<div class="box__left">
-					<div class="box__img1" style="background-image: url(<?=  $bg3 ?>);">					
+			<div class="box__left">
+				<div class="box__img1" style="background-image: url(<?=  rwmb_meta('background_3')['full_url'] ?>);">					
+				</div>
+				<div class="box__quote">
+					<div class="box__img2" style="background-image: url(<?=  rwmb_meta('background_4')['full_url'] ?>);">
 					</div>
-					<div class="box__quote">
-						<div class="box__img2" style="background-image: url(<?=  $bg4 ?>);">
-						</div>
-						<div class="quote__text">
-							<?= $text_11 ?>
-						</div>
+					<div class="quote__text">
+						<?=  rwmb_meta('text_11') ?>
+					</div>
 
-						<div class="quote__more">
-							<span></span>
-							<?= $text_12 ?>
-						</div>
+					<div class="quote__more">
+						<span></span>
+						<?=  rwmb_meta('text_12') ?>
 					</div>
 				</div>
+			</div>
 
-				<div class="box__right">
-					<div class="box__caption">
-						<div class="caption__circle">
-							<img src="<?php echo $bg5; ?>" alt="Logo">
-						</div>
-						<div class="caption__text">
-							<?= $text_13 ?>
-						</div>
-						<a class="caption__more">
-							<span></span>
-							<?= $text_14 ?>
-						</a>
+			<div class="box__right">
+				<div class="box__caption">
+					<div class="caption__circle">
+						<img src="<?=  rwmb_meta('background_5')['full_url'] ?>" alt="Logo">
 					</div>
-					<div class="box__img3" style="background-image: url(<?=  $bg6 ?>);">					
+					<div class="caption__text">
+						<?=  rwmb_meta('text_13') ?>
 					</div>
-
-				</div>	
-				<?php endforeach; ?>
+					<a class="caption__more">
+						<span></span>
+						<?=  rwmb_meta('text_14') ?>
+					</a>
+				</div>
+				<div class="box__img3" style="background-image: url(<?=  rwmb_meta('background_6')['full_url'] ?>);">					
+				</div>
+			</div>
 
 			<script>
 				jQuery(document).ready(function($) {
