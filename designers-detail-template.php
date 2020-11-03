@@ -8,7 +8,6 @@
 ?>
 <?php get_header() ?>
 	<!-- Content -->
-	<!-- Content -->
 	<main id="content">
 		<!-- Content Designers Detail -->
 		<section class="content-designers-detail">
@@ -16,9 +15,7 @@
 				<div class="container">
 					<div class="content_box">						
 						<div class="category"><?= rwmb_meta('category_designers_detail') ?></div>
-
 						<h2 class="name"><?= rwmb_meta('name_designers_detail') ?></h2>
-
 						<div class="text">
 							<?= rwmb_meta('text_designers_detail') ?>
 						</div>
@@ -39,7 +36,6 @@
 							<h3 class="item__name">
 								<?=  $Textdd ?> 
 							</h3>
-
 							<a href="#" class="item__more">
 								<span></span>
 								<?=  $previewdd ?> 
@@ -48,7 +44,6 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
-
 			<div class="content_bottom">
 				<div class="container">			
 					<div class="bottom__box">							
@@ -62,21 +57,21 @@
 							<ul class="social">
 				                <?php if($fr_options['footer_field_06']) :?>
 				                <li>
-				                    <a href="<?= $fr_options['footer_field_06']?>" title="">
+				                    <a href="<?= $fr_options['footer_field_06']?>" title=""  target="_blank">
 				                        <i class="fa fa-instagram"></i>
 				                    </a>
 				                </li>
 				                <?php endif;?>
 				                <?php if($fr_options['footer_field_08']) :?>
 				                <li>
-				                    <a href="<?= $fr_options['footer_field_08']?>" title="">
+				                    <a href="<?= $fr_options['footer_field_08']?>" title=""  target="_blank">
 				                        <i class="fa fa-twitter"></i>
 				                    </a>
 				                </li>
 				                <?php endif;?>
 								<?php if($fr_options['footer_field_05']) :?>
 				                <li>
-				                    <a href="<?= $fr_options['footer_field_05']?>" title="">
+				                    <a href="<?= $fr_options['footer_field_05']?>" title=""  target="_blank">
 				                        <i class="fa fa-facebook"></i>
 				                    </a>
 				                </li>
