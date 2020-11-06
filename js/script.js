@@ -29,6 +29,8 @@ jQuery(document).ready(function() {
 	    	jQuery('#md-forgot form .text-warning, #md-login form .text-warning').text("");
 	    	jQuery('#md-forgot form .input-control, #md-login form .input-control').removeClass("error").removeClass("success-value");
 	    	jQuery('.md-modal').removeClass('md-show');
+	    	jQuery('#menu-active').removeClass('active');
+	    	jQuery('#dark-shadow').removeClass('active');
 	        jQuery(value).addClass('md-show');
 	        // jQuery('body').addClass('none-scroll');
 	        jQuery(value).find('form').trigger("reset");
@@ -75,7 +77,7 @@ jQuery(document).ready(function() {
 		  	dragEndSpeed: 700,
 		  	items: 1,
 		    animateOut: 'fadeOut',
-    		animateIn: 'pulse',
+    		animateIn: 'fadeIn',
 		});
 		jQuery('.content-banner .slider__arrow .arrow__next').click(function() {
 			if(Number(jQuery('.content-banner .slider__arrow .number__current').text()) != Number(jQuery('.content-banner .slider__arrow .number__max').text())){
@@ -109,8 +111,8 @@ jQuery(document).ready(function() {
 		  	navSpeed: 700,
 		  	dragEndSpeed: 700,
 		  	items: 1,
-		    animateOut: 'fadeOutDown',
-    		animateIn: 'fadeInDown',
+		    animateOut: 'fadeOut',
+    		animateIn: 'fadeIn',
 		});
 		var owl2 = jQuery('.content-gallery .box__images');
 		jQuery('.content-gallery .box__images').owlCarousel({
@@ -127,7 +129,7 @@ jQuery(document).ready(function() {
 		  	dragEndSpeed: 700,
 		  	items: 1,
 		    animateOut: 'fadeOut',
-    		animateIn: 'pulse',
+    		animateIn: 'fadeIn',
 		});	
 
 		jQuery('.content-gallery .box__arrow .arrow__next').click(function() {

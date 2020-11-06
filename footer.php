@@ -181,5 +181,22 @@
     </div><!-- /header -->
     
     <div id="dark-shadow"></div>
+
+    <!-- Book  -->
+    <div class="md-modal md-effect-1 full__width" id="book">
+        <div class="md-content">
+            <span class="md-close" title="Close Popup">
+                <span></span>
+                <span></span>
+            </span>
+            <div class="book__form">
+                <div class="book__logo">
+                    <img src="<?= $fr_options['logo-footer_02']['url'] ?>" alt="Logo">
+                </div>
+                <?= do_shortcode('[contact-form-7 id="<?php $fr_options['custom-form-7'] ?> " title="Request an Appointment"]') ?>
+            </div>
+        </div>
+    </div>
+    <div class="md-darknight"></div><!-- the overlay element -->
 </body>
 </html>

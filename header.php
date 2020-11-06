@@ -19,12 +19,17 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.fancybox.min.css">
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/wow.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.mCustomScrollbar.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/moment.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.fancybox.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -61,6 +66,11 @@
                         );
                         wp_nav_menu($defaults); 
                     ?>
+                </div>
+                <div class="flag__book">
+                    <div class="flag__book__box">                       
+                        <span class="md-trigger" data-modal="#book">REQUEST AN APPOINTMENT</span>
+                    </div>
                 </div>
             </div>
         </div>

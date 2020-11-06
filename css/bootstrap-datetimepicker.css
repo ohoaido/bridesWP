@@ -31,7 +31,7 @@
     padding: 20px 20px 5px;
     width: 300px;
     display: table;
-    background: #00707e;
+    background: #858585;
     margin: auto;
     border: 0;
     border-radius: 3px;
@@ -347,7 +347,7 @@
      -webkit-transition: all 0.2s ease-out 0s;
  }
  .bootstrap-datetimepicker-widget table td.active:after{
-     background-color: #004952;
+     background-color: #3b3b3b;
      box-shadow: 0 4px 20px 0 rgba(0,0,0, .14), 0 7px 10px -5px rgba(156, 39, 176, .4);
  }
  

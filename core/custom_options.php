@@ -389,6 +389,12 @@ if (!class_exists('Hungvv13_Theme_Custom')) {
                         'title'     => __('website by 3conn', 'bridek'),   
                         'default'   => '',              
                     ),
+                    array(
+                        'id'        => 'custom-form-7',
+                        'type'      => 'text',
+                        'title'     => __('Id Request an Appointment', 'bridek'),   
+                        'default'   => '',              
+                    )
                 )
             );
 
