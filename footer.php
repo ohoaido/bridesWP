@@ -193,7 +193,7 @@
                 <div class="book__logo">
                     <img src="<?= $fr_options['logo-footer_02']['url'] ?>" alt="Logo">
                 </div>
-                <?= do_shortcode('[contact-form-7 id="<?php $fr_options['custom-form-7'] ?> " title="Request an Appointment"]') ?>
+                <?= do_shortcode($fr_options['custom-form-7']) ?>
             </div>
         </div>
     </div>
