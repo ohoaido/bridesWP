@@ -2,9 +2,6 @@
     global $fr_options;
 ?>
 <?php    
-    /*
-        Template Name: Designers Collection Detail Template
-    */
 ?>
 <?php get_header() ?>
 	<!-- Content -->

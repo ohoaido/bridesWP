@@ -3,45 +3,63 @@
 ?>
 <?php    
     /*
-        Template Name: Designers Detail Template
+        Template Name: Designers Collection Detail Template
     */
 ?>
 <?php get_header() ?>
 	<!-- Content -->
 	<main id="content">
-		<!-- Content Designers Detail -->
-		<section class="content-designers-detail">
+		<!-- Content Designers Collection Detail -->
+		<section class="content-designers-cdetail">
 			<div class="content_top">				
 				<div class="container">
 					<div class="content_box">						
-						<div class="category"><?= rwmb_meta('category_designers_detail') ?></div>
-						<h2 class="name"><?= rwmb_meta('name_designers_detail') ?></h2>
+						<div class="category"><?= rwmb_meta('category_content_designers_cdetail') ?></div>
+
+						<h2 class="name"><?= rwmb_meta('name_content_designers_cdetail') ?></h2>
+
+						<div class="auth">
+							by <span><?= rwmb_meta('auth_content_designers_cdetail') ?></span>
+						</div>
+
 						<div class="text">
-							<?= rwmb_meta('text_designers_detail') ?>
+							<?= rwmb_meta('text_content_designers_cdetail') ?>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="content_collections">
-				<?php 
-				$list_post = rwmb_meta('posts_collection_details');
-				foreach ($list_post as $post_id): 
-					?>						
-					<div class="item" style="background-image: url(<?= get_the_post_thumbnail_url($post_id, 'full') ?>);">
-						<div class="container">
+
+			<div class="container">
+				<div class="content_collections">
+					<?php 
+					$imagesccs = rwmb_meta('group_e6p0kistl4');
+					foreach ($imagesccs as $imagescc): 
+						$bgcc = wp_get_attachment_image_url( $imagescc['gallery_1_content_designers_cdetail'], 'full' );
+						$Namecc = $imagescc['name_gallery_content_designers_cdetail'];
+						$Dtfancyboxcc = $imagescc['data_fancybox'];
+						?>						
+						<div class="item">
+							<div class="item__image" data-fancybox="<?= $Dtfancyboxcc ?>" href="<?= $bgcc ?>" >
+								<img src="<?= $bgcc ?>" alt="">
+							</div>
 							<h3 class="item__name">
-								<?= get_the_title($post_id) ?>
+								<?=  $Namecc ?> 
 							</h3>
-							<a href="<?= get_the_permalink($post_id) ?>" class="item__more">
-								<span></span>
-								Xem bộ sưu tập
-							</a>				
+							<ul class="hide">
+								<?php 
+								$imgpps = $imagescc['group_b2eknfvjeyf'];
+								foreach ($imgpps as $imgpp): 
+									$bgpopup = wp_get_attachment_image_url( $imgpp['gallery_2_cdesigners_cdetail'], 'full' );
+									?>				
+										<li data-fancybox="<?= $Dtfancyboxcc ?>" href="<?= $bgpopup ?>"></li>
+								<?php endforeach; ?>
+							</ul>
 						</div>
-					</div>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
 			</div>
-			<div class="content_bottom">
-				<div class="container">			
+
+			<div class="container">		
+				<div class="content_bottom">	
 					<div class="bottom__box">							
 						<div class="detail__back"><?= rwmb_meta('back_collections') ?></div>
 
