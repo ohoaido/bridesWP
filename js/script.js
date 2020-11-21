@@ -311,6 +311,32 @@ jQuery(document).ready(function() {
 		jQuery('#menu-active').removeClass('active');
     	jQuery('body').removeClass('none-scroll');		
 	});
+
+	jQuery(document).on('click', '.content-collections .filter__category > li > a', function(event) {
+		event.preventDefault();
+		jQuery(this).parent().find('.sub-menu').slideToggle(300);
+		jQuery(this).parent().toggleClass('open');
+	});
+
+	jQuery(document).on('click', '.content-collections .share__button', function(event) {
+		event.preventDefault();
+		jQuery(this).parent().find('.share__social').slideToggle(300);
+		jQuery(this).parent().toggleClass('active');
+	});
+
+	var heightItem = jQuery('.content-collections .item:eq(3)').outerHeight() + jQuery('.content-collections .item:eq(4)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
+	jQuery('.content-collections .item:eq(2) .img').css('height', heightItem);
+
+	var heightItem2 = jQuery('.content-collections .item:eq(11)').outerHeight() + jQuery('.content-collections .item:eq(12)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
+	jQuery('.content-collections .item:eq(10) .img').css('height', heightItem2);
+
+	jQuery(window).resize(function(event) {
+		var heightItem = jQuery('.content-collections .item:eq(3)').outerHeight() + jQuery('.content-collections .item:eq(4)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
+		jQuery('.content-collections .item:eq(2) .img').css('height', heightItem);
+
+		var heightItem2 = jQuery('.content-collections .item:eq(11)').outerHeight() + jQuery('.content-collections .item:eq(12)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
+		jQuery('.content-collections .item:eq(10) .img').css('height', heightItem2);
+	});
 });
 
 function header(){
