@@ -189,20 +189,24 @@
         }  
         if($pages != 1)
         {
-            echo "<div class='fr-pagenavi'>";
+            echo "<div class='box__arrow'>";
+            echo "<a href='".get_pagenum_link(1)."'><div class='arrow__prev'></div></a>";
+            echo "<div class='arrow__number'";
             if($paged > 1) {
-                echo "<a href='".get_pagenum_link(1)."page/".($paged - 1)."'><i class='fa fa-caret-left'></i></a>";
+                echo "<a href='".get_pagenum_link(1)."page/".($paged - 1)."'></a>";
             }                
             for ($i=1; $i <= $pages; $i++)
             {
                 if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
                 {
-                    echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+                    echo ($paged == $i)? "<span class='number__current'>".$i."</span> ":" <a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a> ";
                 }
             }
             if ($paged < $pages){
-                echo "<a href='".get_pagenum_link($paged + 1)."'><i class='fa fa-caret-right'></i></a>";  
+                echo "<a href='".get_pagenum_link($paged + 1)."'></a>";  
             }
+            echo "</div>";
+            echo "<a href='".get_pagenum_link(1)."page/".($pages)."/'><div class='arrow__next'></div></a>";
             echo "</div>";
         }
     }

@@ -71,31 +71,26 @@
 						</div>
 					</div>
 
+					<?php
+					wp_reset_query();
+                    $bridalgowns_post=array(
+                        'post_type' => 'bridemaids',
+                        'post_status' => 'publish',     
+                        'posts_per_page' => 5,
+	                    'order' => 'DESC',
+	                    'paged' =>  get_query_var('paged')
+                    );
+                    query_posts($bridalgowns_post);    
+                    ?>               
 					<div class="box__list">
-						<div class="box__action">							
-							<div class="box__arrow">							
-								<div class="arrow__prev disabled"></div>
-								<div class="arrow__number">
-									<span class="number__current">1</span> / <span class="number__max">3</span>
-								</div>
-								<div class="arrow__next"></div>
-							</div>
+						<div class="box__action">			
+							<?php fr_pagenavi(); ?>						
 							<div class="box__more">
 								<span></span>
 								xem toàn bộ
 							</div>
 						</div>
-						<div class="items">
-							<?php
-							wp_reset_query();
-                            $bridalgowns_post=array(
-                                'post_type' => 'bridemaids',
-                                'post_status' => 'publish',     
-                                'posts_per_page' => 10,
-			                    'order' => 'DESC'
-                            );
-                            query_posts($bridalgowns_post);    
-	                        ?>                   
+						<div class="items">    
 	                        <?php while (have_posts()) : the_post();  ?>
 								<div class="item">
 									<a class="item__img">
@@ -120,13 +115,7 @@
 
 						<div class="box__bottom">							
 							<div class="box__action__2">							
-								<div class="box__arrow">							
-									<div class="arrow__prev disabled"></div>
-									<div class="arrow__number">
-										<span class="number__current">1</span> / <span class="number__max">3</span>
-									</div>
-									<div class="arrow__next"></div>
-								</div>
+								<?php fr_pagenavi(); ?>	
 								<div class="box__more">
 									<span></span>
 									xem toàn bộ
