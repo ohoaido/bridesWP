@@ -190,23 +190,21 @@
         if($pages != 1)
         {
             echo "<div class='box__arrow'>";
-            echo "<a href='".get_pagenum_link(1)."'><div class='arrow__prev'></div></a>";
-            echo "<div class='arrow__number'";
+            if($paged == 1) {
+                echo "<a href='".get_pagenum_link(1)."'><div class='arrow__prev disabled'></div></a>";
+            }  
             if($paged > 1) {
-                echo "<a href='".get_pagenum_link(1)."page/".($paged - 1)."'></a>";
-            }                
-            for ($i=1; $i <= $pages; $i++)
-            {
-                if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-                {
-                    echo ($paged == $i)? "<span class='number__current'>".$i."</span> ":" <a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a> ";
-                }
-            }
-            if ($paged < $pages){
-                echo "<a href='".get_pagenum_link($paged + 1)."'></a>";  
-            }
+                echo "<a href='".get_pagenum_link($paged - 1)."'><div class='arrow__prev'></div></a>";
+            }  
+            echo "<div class='arrow__number'";
+            echo "<span class='number__current'>".$paged."</span> / <span class='number__max' >".$pages."</span>";
             echo "</div>";
-            echo "<a href='".get_pagenum_link(1)."page/".($pages)."/'><div class='arrow__next'></div></a>";
+            if ($paged < $pages){
+                echo "<a href='".get_pagenum_link($paged + 1)."'><div class='arrow__next'></div></a>";
+            }
+            if ($paged == $pages){
+                echo "<a href='".get_pagenum_link($pages)."'><div class='arrow__next disabled'></div></a>";
+            }
             echo "</div>";
         }
     }

@@ -53,13 +53,6 @@
 				                    </a>
 				                </li>
 				                <?php endif;?>
-				                <?php if($fr_options['footer_field_07']) :?>
-				                <li>
-				                    <a href="<?= $fr_options['footer_field_07']?>" title="" target="_blank">
-				                        <i class="fa fa-youtube-play"></i>
-				                    </a>
-				                </li>
-				                <?php endif;?>
 				                <?php if($fr_options['footer_field_08']) :?>
 				                <li>
 				                    <a href="<?= $fr_options['footer_field_08']?>" title="" target="_blank">
@@ -76,7 +69,6 @@
                     $bridalgowns_post=array(
                         'post_type' => 'bridemaids',
                         'post_status' => 'publish',     
-                        'posts_per_page' => 5,
 	                    'order' => 'DESC',
 	                    'paged' =>  get_query_var('paged')
                     );
