@@ -67,7 +67,7 @@
 					<?php
 					wp_reset_query();
                     $bridalgowns_post=array(
-                        'post_type' => 'bridemaids',
+                        'post_type' => 'bridalgown',
                         'post_status' => 'publish',     
 	                    'order' => 'DESC',
 	                    'paged' =>  get_query_var('paged')
@@ -142,9 +142,8 @@
 						<?php
 							wp_reset_query();
                             $args1=array(
-                                'post_type' => 'bridalgowns',
+                                'post_type' => 'bridalgown',
                                 'post_status' => 'publish',     
-                                'posts_per_page' => 10,
 			                    'order' => 'DESC'
                             );
                             query_posts($args1);    
@@ -153,13 +152,13 @@
 							<div class="item">
 								<a href="#" title="">
 									<div class="item__img">
-										<img src="<?=  rwmb_meta('background_8')['full_url'] ?>" alt="Image">
-										<img src="<?=  rwmb_meta('background_9')['full_url'] ?>" alt="Image">
+										<img src="<?= vt_resize(rwmb_meta('image_bridemaids_group',array("size" => "full"))['ID'], '', 300, 450, true)['url']?>" alt="Image">
+										<img src="<?= vt_resize(rwmb_meta('image_bridemaids_hover_group',array("size" => "full"))['ID'], '', 300, 450, true)['url']?>" alt="Image">
 										
 									</div>
 									<div class="item__caption">
-										<h3 class="item__name"><?= rwmb_meta('text_18') ?></h3>
-										<div class="item__auth">by <span><?= rwmb_meta('text_19') ?></span></div>
+										<h3 class="item__name"><?= rwmb_meta('name_bridemaids_group') ?></h3>
+										<div class="item__auth">by <span><?= rwmb_meta('text_bridemaids_group') ?></span></div>
 									</div>
 								</a>
 							</div>    
