@@ -70,8 +70,16 @@
                         'post_type' => 'bridalgown',
                         'post_status' => 'publish',     
 	                    'order' => 'DESC',
-	                    'paged' =>  get_query_var('paged')
+	                    'paged' =>  get_query_var('paged'),
+	                    'tax_query' => array(
+                            array(
+                                'taxonomy' => 'bridalgown-category',
+                                'field' => 'id',
+                                'terms' => rwmb_meta('taxonomy_ct')->term_id,
+                            ),
+                        )
                     );
+                    $parentId = $post->post_parent;
                     query_posts($bridalgowns_post);    
                     ?>               
 					<div class="box__list">
@@ -79,7 +87,7 @@
 							<?php fr_pagenavi(); ?>						
 							<div class="box__more">
 								<span></span>
-								xem toàn bộ
+								<a href="<?php echo get_permalink($parentId); ?>">xem toàn bộ</a>
 							</div>
 						</div>
 						<div class="items">    
@@ -110,7 +118,7 @@
 								<?php fr_pagenavi(); ?>	
 								<div class="box__more">
 									<span></span>
-									xem toàn bộ
+									<a href="<?php echo get_permalink($parentId); ?>">xem toàn bộ</a>
 								</div>
 							</div>
 						</div>
