@@ -127,19 +127,15 @@
 		<section class="content-albums">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small"><?= rwmb_meta('text_15') ?></div>
+					<div class="box__small">BRIDAL GOWNS</div>
 					<div class="box__rela">						
-						<h2 class="box__heading"><?= rwmb_meta('text_16') ?></h2>
+						<h2 class="box__heading">New Arrival Dress</h2>
 						<div class="box__control">
 							<div class="control__arrow">
 								<div class="arrow__prev"></div>
 								<div class="arrow__number">/</div>
 								<div class="arrow__next"></div>
 							</div>
-							<a class="control__more">
-								<span></span>
-								<?= rwmb_meta('text_17') ?>
-							</a>
 						</div>
 					</div>
 					<div class="box__sliders owl-carousel">
@@ -147,22 +143,29 @@
 							wp_reset_query();
                             $args1=array(
                                 'post_type' => 'bridalgown',
-                                'post_status' => 'publish',     
+                                'post_status' => 'publish',   
 			                    'order' => 'DESC'
                             );
                             query_posts($args1);    
                         ?>                   
                         <?php while (have_posts()) : the_post();  ?>
 							<div class="item">
-								<a href="#" title="">
-									<div class="item__img">
-										<img src="<?= vt_resize(rwmb_meta('image_bridemaids_group',array("size" => "full"))['ID'], '', 300, 450, true)['url']?>" alt="Image">
-										<img src="<?= vt_resize(rwmb_meta('image_bridemaids_hover_group',array("size" => "full"))['ID'], '', 300, 450, true)['url']?>" alt="Image">
-										
+								<a href="<?php echo get_permalink(); ?>" title="">
+									<div class="item__img">	
+										<?php 
+										$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
+										foreach ($ptbridals as $index => $ptbridal): 
+											$gs = $ptbridal['simage_details'];
+											if ($index == 2) {
+												break;
+											}
+											?>		
+											<img src="<?= vt_resize($gs, '', 300, 450, true)['url']?>" alt="Image">
+										<?php endforeach; ?>									
 									</div>
 									<div class="item__caption">
-										<h3 class="item__name"><?= rwmb_meta('name_bridemaids_group') ?></h3>
-										<div class="item__auth">by <span><?= rwmb_meta('text_bridemaids_group') ?></span></div>
+										<h3 class="item__name"><?= rwmb_meta('text_info_heading') ?></h3>
+										<div class="item__auth">by <span><?= rwmb_meta('text_info_auth') ?></span></div>
 									</div>
 								</a>
 							</div>    
