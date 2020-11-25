@@ -51,27 +51,12 @@
 
 						<div class="detail__share">
 							<ul class="social">
-				                <?php if($fr_options['footer_field_06']) :?>
 				                <li>
-				                    <a href="<?= $fr_options['footer_field_06']?>" title=""  target="_blank">
-				                        <i class="fa fa-instagram"></i>
-				                    </a>
-				                </li>
-				                <?php endif;?>
-				                <?php if($fr_options['footer_field_08']) :?>
-				                <li>
-				                    <a href="<?= $fr_options['footer_field_08']?>" title=""  target="_blank">
-				                        <i class="fa fa-twitter"></i>
-				                    </a>
-				                </li>
-				                <?php endif;?>
-								<?php if($fr_options['footer_field_05']) :?>
-				                <li>
-				                    <a href="<?= $fr_options['footer_field_05']?>" title=""  target="_blank">
-				                        <i class="fa fa-facebook"></i>
-				                    </a>
-				                </li>
-				                <?php endif;?>
+									<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_permalink()?>" onclick='window.open(this.href, "mywin","left=50,top=50,width=600,height=350,toolbar=0"); return false;' title=""><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/share?text=<?php the_title() ?>&url=<?= get_permalink()?>" onclick='window.open(this.href, "mywin","left=50,top=50,width=600,height=350,toolbar=0"); return false;' title=""><i class="fa fa-twitter"></i></a>
+                                 </li>
 							</ul>
 							<div class="share">
 								<span></span>

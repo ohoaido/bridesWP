@@ -324,6 +324,12 @@ jQuery(document).ready(function() {
 		jQuery(this).parent().toggleClass('active');
 	});
 
+	jQuery(document).on('click', '.content-collection-detail .share__button', function(event) {
+		event.preventDefault();
+		jQuery(this).parent().find('.share__social').slideToggle(300);
+		jQuery(this).parent().toggleClass('active');
+	});
+
 	var heightItem = jQuery('.content-collections .item:eq(3)').outerHeight() + jQuery('.content-collections .item:eq(4)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
 	jQuery('.content-collections .item:eq(2) .img').css('height', heightItem);
 
@@ -336,6 +342,22 @@ jQuery(document).ready(function() {
 
 		var heightItem2 = jQuery('.content-collections .item:eq(11)').outerHeight() + jQuery('.content-collections .item:eq(12)').outerHeight() - jQuery('.content-collections .item:eq(4) .item__caption').outerHeight()  + 43;
 		jQuery('.content-collections .item:eq(10) .img').css('height', heightItem2);
+	});
+
+	jQuery(document).on('click', '.content-collection-detail .has__col .item__title', function(event) {
+		event.preventDefault();
+		if(jQuery(this).hasClass('active')){
+			jQuery(this).removeClass('active');
+			jQuery(this).parent().find('.item__col').slideUp(300);
+		} else {
+			jQuery(this).addClass('active');
+			jQuery(this).parent().find('.item__col').slideDown(300);			
+		}
+	});
+
+	jQuery(document).on('click', 'section.content-designers-cdetail .content_bottom .detail__back, section.content-collection-detail .content_box .box__sidebar .box__back .back__history', function(event) {
+		event.preventDefault();
+		window.history.back();
 	});
 });
 
