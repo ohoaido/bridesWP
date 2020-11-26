@@ -78,7 +78,7 @@
 						<div class="items">    
 	                        <?php while (have_posts()) : the_post();  ?>
 								<div class="item">
-									<a class="item__img">
+									<a href="<?php echo get_permalink($pr); ?>"class="item__img">
 										<?php 
 											$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
 											foreach ($ptbridals as $index => $ptbridal): 

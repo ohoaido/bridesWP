@@ -31,7 +31,7 @@
 					<div class="caption__text">
 						<?=  $Text ?> 
 					</div>
-					<a class="caption__more">
+					<a href="<?= $Link?>" class="caption__more">
 						<span></span>
 						<?=  $preview ?> 
 					</a>					
@@ -61,7 +61,7 @@
 								<div class="child__text">
 									<?=  rwmb_meta('text_single_gallery') ?> 
 								</div>
-								<a class="child__more">
+								<a href="<?= rwmb_meta('url_single_gallery') ?>" class="child__more">
 									<span></span>
 									<?= rwmb_meta('preview_single_gallery') ?> 
 								</a>
@@ -124,7 +124,7 @@
 							<div class="item__text">
 								<?= $TextGS ?>
 							</div>
-							<a class="item__more">
+							<a href="<?=$LinkGS?>" class="item__more">
 								<span></span>
 								<?= $previewGS ?>
 							</a>
