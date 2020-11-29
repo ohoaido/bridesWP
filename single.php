@@ -61,7 +61,7 @@
 			<div class="container">		
 				<div class="content_bottom">	
 					<div class="bottom__box">							
-						<div class="detail__back"><?= rwmb_meta('back_collections') ?></div>
+						<div class="detail__back">Back</div>
 
 						<div class="detail__book md-trigger" data-modal="#book">
 							REQUEST AN APPOINTMENT
@@ -93,7 +93,7 @@
 							</ul>
 							<div class="share">
 								<span></span>
-								<?= rwmb_meta('share_collections') ?>
+								Share
 							</div>
 						</div>
 					</div>	

@@ -3,18 +3,18 @@
 ?>
 <?php    
     /*
-        Template Name: Bridal gown master Template
+        Template Name: Bridemaid Template
     */
 ?>
 <?php get_header() ?>
 	<!-- Content -->
-	<main id="content">      
+	<main id="content">
 		<!-- Content Banner Type -->
-		<section class="content-banner-type" style="background-image: url(<?= rwmb_meta('image_banner_bridal_gown',array("size" => "full"))['url'] ?>;" alt="Image">
+		<section class="content-banner-type" style="background-image: url(<?= rwmb_meta('image_banner_bridemaids',array("size" => "full"))['url'] ?>;" alt="Image">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small"><?=  rwmb_meta('category_bridalgown') ?></div>
-					<h1 class="box__heading"><?=  rwmb_meta('text_bridal_gown') ?></h1>
+					<div class="box__small"><?=  rwmb_meta('category_bridemaids') ?></div>
+					<h1 class="box__heading"><?=  rwmb_meta('text_bridemaids') ?></h1>
 				</div>
 			</div>
 		</section> <!-- /Content Banner Type -->
@@ -26,7 +26,7 @@
 					<div class="box__sidebar">
 						 <?php 
                             $defaults = array(
-                              'theme_location'  => 'bridal_gown',
+                              'theme_location'  => 'bridemaids',
                               'container'       => 'ul',
                               'menu_class'      => 'no-style filter__category',
                             );
@@ -48,26 +48,39 @@
 							</ul>
 						</div>
 					</div>
+
 					<?php
 					wp_reset_query();
-			        $bridalgowns_post=array(
-			            'post_type' => 'bridalgown',
-			            'post_status' => 'publish',     
-			            'order' => 'DESC',
-			            'paged' =>  get_query_var('paged')
-			        );
-			        query_posts($bridalgowns_post);    
-			        ?>         
+                    $bridemaidss_post=array(
+                        'post_type' => 'bridemaids',
+                        'post_status' => 'publish',     
+	                    'order' => 'DESC',
+	                    'paged' =>  get_query_var('paged'),
+	                    'tax_query' => array(
+                            array(
+                                'taxonomy' => 'bridemaids-category',
+                                'field' => 'id',
+                                'terms' => rwmb_meta('taxonomy_md')->term_id,
+                            ),
+                        )
+                    );
+                    $parentId = $post->post_parent;
+                    query_posts($bridemaidss_post);    
+                    ?>               
 					<div class="box__list">
 						<div class="box__action">			
-							<?php fr_pagenavi(); ?>		
+							<?php fr_pagenavi(); ?>						
+							<div class="box__more">
+								<span></span>
+								<a href="<?php echo get_permalink($parentId); ?>">xem toàn bộ</a>
+							</div>
 						</div>
 						<div class="items">    
 	                        <?php while (have_posts()) : the_post();  ?>
 								<div class="item">
-										<a href="<?php echo get_permalink($pr); ?>" class="item__img">
-											<?php 
-											$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
+									<a href="<?php echo get_permalink($pr); ?>"class="item__img">
+										<?php 
+											$ptbridals = rwmb_meta('group_content_gallery_bridemaids');
 											foreach ($ptbridals as $index => $ptbridal): 
 												$gs =  wp_get_attachment_image_url( $ptbridal['simage_details'], 'full' );
 												if ($index == 2) {
@@ -77,8 +90,8 @@
 											<div class="img" style="background-image: url(<?=  $gs ?>);">
 												<img src="<?=$gs?>" alt="Image">
 											</div>
-											<?php endforeach; ?>	
-										</a>
+											<?php endforeach; ?>
+									</a>
 									<div class="item__caption">
 										<h3 class="item__name">
 											<a href="<?php echo get_permalink($pr); ?>" title=""><?= rwmb_meta('text_info_auth') ?></a>
@@ -94,7 +107,10 @@
 						<div class="box__bottom">							
 							<div class="box__action__2">							
 								<?php fr_pagenavi(); ?>	
-								
+								<div class="box__more">
+									<span></span>
+									<a href="<?php echo get_permalink($parentId); ?>">xem toàn bộ</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -106,7 +122,7 @@
 		<section class="content-albums">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small">BRIDAL GOWNS</div>
+					<div class="box__small">BRIDEMAIDS</div>
 					<div class="box__rela">						
 						<h2 class="box__heading">New Arrival Dress</h2>
 						<div class="box__control">
@@ -115,13 +131,17 @@
 								<div class="arrow__number">/</div>
 								<div class="arrow__next"></div>
 							</div>
+							<a href="<?php echo get_permalink($parentId); ?>" class="control__more">
+								<span></span>
+								See details
+							</a>
 						</div>
 					</div>
 					<div class="box__sliders owl-carousel">
 						<?php
 							wp_reset_query();
                             $args1=array(
-                                'post_type' => 'bridalgown',
+                                'post_type' => 'bridemaids',
                                 'post_status' => 'publish',   
 			                    'order' => 'DESC'
                             );
@@ -131,9 +151,9 @@
                         <?php while (have_posts()) : the_post();  ?>
 							<div class="item">
 								<a href="<?php echo get_permalink($pr); ?>" title="">
-									<div class="item__img">	
+									<div class="item__img">
 										<?php 
-										$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
+										$ptbridals = rwmb_meta('group_content_gallery_bridemaids');
 										foreach ($ptbridals as $index => $ptbridal): 
 											$gs = $ptbridal['simage_details'];
 											if ($index == 2) {
@@ -141,7 +161,7 @@
 											}
 											?>		
 											<img src="<?= vt_resize($gs, '', 300, 450, true)['url']?>" alt="Image">
-										<?php endforeach; ?>									
+										<?php endforeach; ?>
 									</div>
 									<div class="item__caption">
 										<h3 class="item__name"><?= rwmb_meta('text_info_heading') ?></h3>

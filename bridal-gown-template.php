@@ -26,7 +26,7 @@
 					<div class="box__sidebar">
 						 <?php 
                             $defaults = array(
-                              'theme_location'  => 'bride_maid',
+                              'theme_location'  => 'bridal_gown',
                               'container'       => 'ul',
                               'menu_class'      => 'no-style filter__category',
                             );
@@ -93,13 +93,13 @@
 											<?php endforeach; ?>
 									</a>
 									<div class="item__caption">
-									<h3 class="item__name">
-										<a href="#" title=""><?= rwmb_meta('name_bridemaids_group') ?></a>
-									</h3>
-									<div class="item__auth">
-										by <span><?= rwmb_meta('text_bridemaids_group') ?></span>
+										<h3 class="item__name">
+											<a href="<?php echo get_permalink($pr); ?>" title=""><?= rwmb_meta('text_info_auth') ?></a>
+										</h3>
+										<div class="item__auth">
+											by <span><?= rwmb_meta('text_info_heading') ?></span>
+										</div>
 									</div>
-								</div>
 								</div>    
 	                        <?php endwhile; ?>
 						</div>

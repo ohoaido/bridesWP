@@ -3,18 +3,18 @@
 ?>
 <?php    
     /*
-        Template Name: Bridal gown master Template
+        Template Name: Accessories Template
     */
 ?>
 <?php get_header() ?>
 	<!-- Content -->
 	<main id="content">      
 		<!-- Content Banner Type -->
-		<section class="content-banner-type" style="background-image: url(<?= rwmb_meta('image_banner_bridal_gown',array("size" => "full"))['url'] ?>;" alt="Image">
+		<section class="content-banner-type" style="background-image: url(<?= rwmb_meta('image_banner_accessories',array("size" => "full"))['url'] ?>;" alt="Image">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small"><?=  rwmb_meta('category_bridalgown') ?></div>
-					<h1 class="box__heading"><?=  rwmb_meta('text_bridal_gown') ?></h1>
+					<div class="box__small"><?=  rwmb_meta('category_accessories') ?></div>
+					<h1 class="box__heading"><?=  rwmb_meta('text_accessories') ?></h1>
 				</div>
 			</div>
 		</section> <!-- /Content Banner Type -->
@@ -26,7 +26,7 @@
 					<div class="box__sidebar">
 						 <?php 
                             $defaults = array(
-                              'theme_location'  => 'bridal_gown',
+                              'theme_location'  => 'accessories',
                               'container'       => 'ul',
                               'menu_class'      => 'no-style filter__category',
                             );
@@ -50,13 +50,20 @@
 					</div>
 					<?php
 					wp_reset_query();
-			        $bridalgowns_post=array(
-			            'post_type' => 'bridalgown',
+			        $accessories_post=array(
+			            'post_type' => 'accessories',
 			            'post_status' => 'publish',     
 			            'order' => 'DESC',
-			            'paged' =>  get_query_var('paged')
+			            'paged' =>  get_query_var('paged'),
+			            'tax_query' => array(
+                            array(
+                                'taxonomy' => 'accessories-category',
+                                'field' => 'id',
+                                'terms' => rwmb_meta('taxonomy_ac')->term_id,
+                            ),
+                        )
 			        );
-			        query_posts($bridalgowns_post);    
+			        query_posts($accessories_post);    
 			        ?>         
 					<div class="box__list">
 						<div class="box__action">			
@@ -67,7 +74,7 @@
 								<div class="item">
 										<a href="<?php echo get_permalink($pr); ?>" class="item__img">
 											<?php 
-											$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
+											$ptbridals = rwmb_meta('group_content_gallery_accessories');
 											foreach ($ptbridals as $index => $ptbridal): 
 												$gs =  wp_get_attachment_image_url( $ptbridal['simage_details'], 'full' );
 												if ($index == 2) {
@@ -106,7 +113,7 @@
 		<section class="content-albums">
 			<div class="container">
 				<div class="content_box">
-					<div class="box__small">BRIDAL GOWNS</div>
+					<div class="box__small">ACCESSORIES</div>
 					<div class="box__rela">						
 						<h2 class="box__heading">New Arrival Dress</h2>
 						<div class="box__control">
@@ -121,7 +128,7 @@
 						<?php
 							wp_reset_query();
                             $args1=array(
-                                'post_type' => 'bridalgown',
+                                'post_type' => 'accessories',
                                 'post_status' => 'publish',   
 			                    'order' => 'DESC'
                             );
@@ -133,7 +140,7 @@
 								<a href="<?php echo get_permalink($pr); ?>" title="">
 									<div class="item__img">	
 										<?php 
-										$ptbridals = rwmb_meta('group_content_gallery_bridalgown');
+										$ptbridals = rwmb_meta('group_content_gallery_accessories');
 										foreach ($ptbridals as $index => $ptbridal): 
 											$gs = $ptbridal['simage_details'];
 											if ($index == 2) {
