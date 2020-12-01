@@ -355,7 +355,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery(document).on('click', 'section.content-designers-cdetail .content_bottom .detail__back, section.content-collection-detail .content_box .box__sidebar .box__back .back__history', function(event) {
+	jQuery(document).on('click', 'section.content-designers-cdetail .content_bottom .detail__back, section.content-collection-detail .content_box .box__sidebar .box__back .back__history, section.content-designers-detail .content_bottom .detail__back', function(event) {
 		event.preventDefault();
 		window.history.back();
 	});
